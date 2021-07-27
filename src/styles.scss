@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --clr-back: #666;
+  --clr-front: #FFFFFF;
+}
+
 html, body {
   margin: 0;
   padding: 0;
 
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url(/unsplash.it/1920/1080);
 }
 
 /* CAN (MUST) BE REMOVED ! Sample Global style */
