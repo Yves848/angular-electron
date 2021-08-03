@@ -29,7 +29,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "primeng/resources/themes/arya-blue/theme.css"
             ],
             "scripts": [],
             "customWebpackConfig": {
@@ -119,7 +122,10 @@
             "karmaConfig": "src/karma.conf.js",
             "scripts": [],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "primeng/resources/themes/arya-blue/theme.css"
             ],
             "assets": [
               "src/assets"

@@ -1,0 +1,19 @@
+:host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 00px;
+}
+
+@media screen and (max-width: 64em) {
+  :host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+      top: 00px;
+  }
+}
+
+.main {
+  height: 250px;
+}
+
+.table {
+  height: 600px;
+}

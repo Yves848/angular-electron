@@ -16,12 +16,15 @@ import { DetailModule } from './detail/detail.module';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
+import { MenuComponent } from './components/menu/menu.component';
+import {ButtonModule} from 'primeng/button';
+import { TableModule } from 'primeng/table';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new TranslateHttpLoader(http, './assets/i18n/', '.json');
 
 @NgModule({
-  declarations: [AppComponent, MainComponent],
+  declarations: [AppComponent, MainComponent, MenuComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -31,6 +34,8 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new Transl
     HomeModule,
     DetailModule,
     AppRoutingModule,
+    ButtonModule,
+    TableModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

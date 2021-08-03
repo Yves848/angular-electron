@@ -1,1 +1,45 @@
-<p>main works!</p>
+<div class="main">
+  <p-table class="table" [value]="ms.files" dataKey="file" [scrollable]="true" scrollHeight="50vh" styleClass="p-datatable-striped">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>FileName</th>
+        <th>Artist</th>
+        <th>Title</th>
+        <th style="width:8rem"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-file let-editing="editing" let-ri="rowIndex">
+      <tr [pEditableRow]="file">
+        <td>
+          {{file.path}}
+        </td>
+        <td pEditableColumn>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input pInputText type="text" [(ngModel)]="file.Artist">
+            </ng-template>
+            <ng-template pTemplate="output">
+               {{file.Artist}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td pEditableColumn>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input pInputText type="text" [(ngModel)]="file.Title">
+            </ng-template>
+            <ng-template pTemplate="output">
+               {{file.Title}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td style="text-align:center">
+          <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(file)" class="p-button-rounded p-button-text"></button>
+          <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(file)" class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+          <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(file, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+      </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+

@@ -1,4 +1,5 @@
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow, screen, ipcMain, dialog } from 'electron';
+import { listenEvents } from './work/main'
 import * as path from 'path';
 import * as fs from 'fs';
 import * as url from 'url';
@@ -29,6 +30,7 @@ function createWindow(): BrowserWindow {
     },
   });
 
+  listenEvents();
 
   if (serve) {
     win.webContents.openDevTools();
@@ -84,6 +86,7 @@ try {
     // dock icon is clicked and there are no other windows open.
     if (win === null) {
       createWindow();
+
     }
   });
 
